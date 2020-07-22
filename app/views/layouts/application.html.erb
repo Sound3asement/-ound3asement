@@ -14,7 +14,7 @@
   <body>
 
     <div class="w3-display-container w3-green">
-    <%= image_tag 's3img/6961426_preview.png', :class => "w3-image", :style => "max-width:50px" %> 
+     <a href="/="><%= image_tag 's3img/logoPH.svg', :class => "w3-image", :style => "max-width:50px" %></a>
     <a href="/"class="w3-bar-item w3-button">Home</a>
        <div class="w3-dropdown-hover">
     <button class="w3-button">For Artists</button>
@@ -37,9 +37,15 @@
   <h4 class="w3-display-topmiddle w3-bar-item">$ound3asement</h4>
 
   <div class="w3-display-right">
+  <ul style="list-style-type:none;">
+  <li><p class= "w3-bar-item w3-button"><%= link_to "Sign In", new_user_session_path %></p></li>
+  <li><p class= "w3-bar-item w3-button"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p></li>
+  </ul>
+    
+    
+    
+     
 
-      <a href="#" class="w3-bar-item w3-button">Sign up</a>
-      <a href="#"class="w3-bar-item w3-button">Sign in</a>
   
   </div>
  
@@ -57,5 +63,8 @@
  
   
     <%= yield %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert" ) %>
+    <% end %>
   </body>
 </html>
