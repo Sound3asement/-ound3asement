@@ -1,0 +1,9 @@
+<h1 class="w3-container">
+<%= @post.title %>
+</h1>
+<p>
+Submmited <%= time_ago_in_words(@post.created_at) %> ago
+</p>
+<p>
+<%= @post.body %>
+</p>

@@ -5,41 +5,43 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
         
-<link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="application.css">
-<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="application.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="w3-deep-purple">
 
     <div class="w3-display-container w3-green">
      <a href="/="><%= image_tag 's3img/logoPH.svg', :class => "w3-image", :style => "max-width:50px" %></a>
-    <a href="/"class="w3-bar-item w3-button">Home</a>
-       <div class="w3-dropdown-hover">
-    <button class="w3-button">For Artists</button>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-deep-purple">
-      <a href="#" class="w3-bar-item w3-button">Beats</a>
-      <a href="#" class="w3-bar-item w3-button">Melodies</a>
-      <a href="#" class="w3-bar-item w3-button">Open Verses</a>
-    </div>
-  </div>
+     <a href="/"class="w3-bar-item w3-button">Home</a>
+      <div class="w3-dropdown-hover">
+        <button class="w3-button">For Artists</button>
+           <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-deep-purple">
+            <a href="#" class="w3-bar-item w3-button">Beats</a>
+            <a href="#" class="w3-bar-item w3-button">Melodies</a>
+            <a href="#" class="w3-bar-item w3-button">Open Verses</a>
+          </div>
+      </div>
 
-  <div class="w3-dropdown-hover">
-    <button class="w3-button">For Producers</button>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">For Producers</button>
     <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-deep-purple">
       <a href="#" class="w3-bar-item w3-button">Accapellas</a>
       <a href="#" class="w3-bar-item w3-button">Loops</a>
       <a href="#" class="w3-bar-item w3-button">Instrument Kits</a>
     </div>
+   
   </div>
+   <a href="/comPage" class="w3-bar-item w3-button">Forum</a>
 
   <h4 class="w3-display-topmiddle w3-bar-item">$ound3asement</h4>
 
   <div class="w3-display-right">
   <ul style="list-style-type:none;">
-  <li><p class= "w3-bar-item w3-button"><%= link_to "Sign In", new_user_session_path %></p></li>
-  <li><p class= "w3-bar-item w3-button"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p></li>
+  <li><p class= "w3-bar-item w3-button w3-hover-shadow p2"><%= link_to "Sign In", new_user_session_path %></p></li>
+  <li><p class= "w3-bar-item w3-button w3-hover-shadow p2"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p></li>
   </ul>
     
     
