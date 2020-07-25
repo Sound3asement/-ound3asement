@@ -12,7 +12,7 @@ end
   root 'home#index'
   
   get '/post', to: 'posts#index'
-  # get '/cartsPage', to: 'home#Carts'
+  get '/about', to: 'pages#about'
   # get '/extractsPage', to: 'home#Extracts'
   # get '/glassPage', to: 'home#Glass'
   # get '/THCvsCBD', to: 'home#THC_CBD'

@@ -14,7 +14,7 @@
   <body class="w3-deep-purple">
 
     <div class="w3-display-container w3-green">
-     <a href="/="><%= image_tag 's3img/logoPH.svg', :class => "w3-image", :style => "max-width:50px" %></a>
+     <a href="/"><%= image_tag 's3img/logoPH.svg', :class => "w3-image", :style => "max-width:50px" %></a>
      <a href="/"class="w3-bar-item w3-button">Home</a>
       <div class="w3-dropdown-hover">
         <button class="w3-button">For Artists</button>
@@ -32,18 +32,24 @@
       <a href="#" class="w3-bar-item w3-button">Loops</a>
       <a href="#" class="w3-bar-item w3-button">Instrument Kits</a>
     </div>
-   
+  
   </div>
    <a href="/post" class="w3-bar-item w3-button">Forum</a>
+     <% if user_signed_in? %>
+        <a href="/about"class="w3-bae-item w3-button">Profile</a>
+      <% end %>
 
   <h4 class="w3-display-topmiddle w3-bar-item">$ound3asement</h4>
 
   <div class="w3-display-right">
   <ul style="list-style-type:none;">
-  <li><p class= "w3-bar-item w3-button w3-hover-shadow p2"><%= link_to "Sign In", new_user_session_path %></p></li>
-  <li><p class= "w3-bar-item w3-button w3-hover-shadow p2"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p></li>
-  </ul>
-    
+      <% if !user_signed_in? %>
+        <li><p class= "w3-bar-item w3-button w3-hover-shadow p2"><%= link_to "Sign In", new_user_session_path %></p></li>
+      <% end %>
+  <% if user_signed_in? %>
+    <li><p class= "w3-bar-item w3-button w3-hover-shadow p2"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p></li>
+    </ul>
+  <% end %>
     
     
      

@@ -2,8 +2,11 @@
 <h1 class="s3-show">
 <%= @post.title %>
 </h1>
-<p>
-Submmited <%= time_ago_in_words(@post.created_at) %> ago | <%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %> </p>
+
+<p> Submmited <%= time_ago_in_words(@post.created_at) %> ago 
+<% if user_signed_in? %>
+    | <%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %> </p>
+<% end %>
 <p>
 <%= @post.body %>
 </p>
