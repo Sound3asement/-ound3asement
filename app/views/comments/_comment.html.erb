@@ -4,4 +4,8 @@
 <p><%= comment.body %></p>
 <p> <%= time_ago_in_words(comment.created_at) %> ago</p>
 </div>
+<p>
+<%= link_to 'delete', [comment.post, comment], method: :delete, class: "w3-btn", data: {confirm: 'are you sure?'}%>
+</p>
+
 </div>
