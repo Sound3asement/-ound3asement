@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts
-  get 'home/index'
+
+# resources :users
+resources :posts do
+  resources :comments
+end
+ 
+  
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'home/index'
   root 'home#index'
-  # get '/budPage', to: 'home#Bud'
+  
+  get '/post', to: 'posts#index'
   # get '/cartsPage', to: 'home#Carts'
   # get '/extractsPage', to: 'home#Extracts'
   # get '/glassPage', to: 'home#Glass'

@@ -1,9 +1,17 @@
-<h1 class="w3-container">
+<div class= "w3-container">
+<h1 class="s3-show">
 <%= @post.title %>
 </h1>
 <p>
-Submmited <%= time_ago_in_words(@post.created_at) %> ago
-</p>
+Submmited <%= time_ago_in_words(@post.created_at) %> ago | <%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %> </p>
 <p>
 <%= @post.body %>
 </p>
+
+<div>
+<h2><%= @post.comments.count %> comments</h2>
+<%= render @post.comments %>
+<h3>Join Discussion !</h3>
+<%= render "comments/form" %>
+</div>
+</div>

@@ -1,0 +1,19 @@
+
+<button class="w3-bar-item w3-btn w3-right s3-btn"><%= link_to "Make Post", new_post_path , { :class => "Make_Post" }%></button>
+
+<div class= w3-container>
+
+
+<h3 class="s3-show">Post Feed</h3> 
+</div>
+
+
+<% @posts.each do |post|%>
+    <div class="w3-container">
+        <h2 class="s3-show"> <%= link_to post.title, post %> </h2><br>
+        <p><%= truncate(post.body, length:100) %></p>
+        <p><%= time_ago_in_words(post.created_at) %> ago</p>
+  
+    </div>
+  
+<% end %>
