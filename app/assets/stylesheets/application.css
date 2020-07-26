@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import 'normalize';
+
  h1, h2 {
   font-family: "Ubuntu", sans-serif;
 }img{
